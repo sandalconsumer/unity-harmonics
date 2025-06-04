@@ -20,7 +20,7 @@ public class Body : MonoBehaviour
     Vector3 acceleration;
     Vector3 velocity;
 
-    float mass = 100;
+    public float mass = 100;
     
     Vector3 leadForce;
     
