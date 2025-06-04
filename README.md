@@ -42,7 +42,7 @@ The **Body** script is added to the gameObject you want to simulate a spring sys
 
 ## Notes / Technical Details
 - The ODE Integrator used for the point-masses in this simulation is currently Velocity Verlet. I might add RK4 as an option in the future.  
-- I am planning for this project to be my graduation project, which means that I will most likely be working on it for the next 1.5 years.  
+- I am planning for this project to be my graduation project, which means that I will most likely be working on it for the next 1.5 years (or until i have finished all my ambitions for it).  
 - Floating-point numbers are currently used for this simulation, but I am planning to switch to Double-Precision soon by bringing in **DVector3** from my other project **unity-n-body**.
 
 ## Simulation Flow
