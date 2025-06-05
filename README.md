@@ -21,20 +21,40 @@ Harmonic Motion in Unity.
 
 - Open Unity Hub
 - Click on the **Add Project** button in the top right next to **New Project**.
+- Navigate to the cloned folder and click **Open** in the bottom right corner.
 - This project was made with Unity 6000.1.1f1 so that is where the code is guaranteed to work, but most Unity 6 versions will (most likely) work well.
+- once you have opened Unity, Navigate to the scenes folder and open the **SampleScene** scene.
 
 ## Documentation  
 
-There are 2 main scripts you need to know to understand this repo. And they are:
-1. Body
+There are 3 main classes you need to know to understand this repo. And they are:
+1. Physics Controller
 2. Simulation Data Compiler
+3. Physics Objects
 
-The **Body** script is added to the gameObject you want to simulate a spring system with, and the **Simulation Data Compiler** visualizes the data from the bodies.
+The **Physics Objects** script contains 2 classes: Spring and Pointmass.  
+Physics Controller makes a list of Springs and Pointmasses which are then linked by the user (similar to vertices and edges).  
+Simulation Data Compiler takes data from the **Physics Controller** and visualizes it. I am planning to make an option to export this data.  
 
-### Body Variables
-- Data Compiler is the **Simulation Data Compiler** script that will read the data from the current Body.  
-- Mass is the mass of the point (the GameObject's transform's position) in kilograms.  
-- Connected Springs is a list of all the springs that will Influence the current Body. Currently, the only way to make new springs that the body will recognize is to access this, but I am planning to make a dedicated GameObject for springs in the near future.  
+### Physics Controller
+- Visualize Springs toggles the visualization of springs in the unity scene view.
+- Record Data toggles the sending of data from Physics Controller to Simulation Data Compiler.
+  
+#### Masses
+
+Every element in masses is an individual instance of class **Pointmass**:
+- Position is the starting position of the Pointmass. note that this is also used as the current position of the pointmass on runtime.  
+- Mass is the mass of the pointmass in kilograms.  
+
+#### Springs
+
+Every element in springs is an individual instance of class **Spring**:
+- Spring Constant is the variable `k` in Hooke's law `Fs = -kx` and it controls the "strength" of the spring
+- Rest Length is the length of the spring `x` in Hooke's law `Fs = -kx` where if x = 0 there is no restorative force `Fs = 0`.
+- Root linked index is the pointmass that is linked to the spring from its root.
+- End linked index is the pointmass that is linked to the spring from its end.
+
+Note: If either of the "linked indices" do not exist, the spring is considered to come from the origin.
 
 ### Simulation Data Compiler Variables
 - Plot Scale is a scalar that controls the size of the graph in the unity scene.
@@ -47,15 +67,15 @@ The **Body** script is added to the gameObject you want to simulate a spring sys
 
 ## Simulation Flow
 On Simulation Start:
-1. Initialize all positions for point-masses from preset transform  
-2. Calculate initial stretch of all springs
+1. Find the simulation end data instance in the scene
+2. Find springs' pointmass indices
 
 Every Timestep:
-1. Represent Springs in Unity Scene using Debug
-2. Velocity Verlet's Half-step (for Second-Order Accuracy)
-3. Recalculation of spring forces and stretching based on new positions from Velocity Verlet's intermediate step
-4. Final Step of Velocity Verlet
-5. Sending Data to Simulation Data Compiler
+1. Velocity Verlet's Half-step (for Second-Order Accuracy)
+2. Recalculation of spring forces and stretching based on new positions from Velocity Verlet's intermediate step
+3. Final Step of Velocity Verlet
+
+Note that the sending of simulation data to the instance of simulation end data is accumulated across all steps.
 
 ## Credits
 

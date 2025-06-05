@@ -4,13 +4,15 @@ using UnityEngine;
 [CustomEditor(typeof(Spring))]
 public class SpringEditor : Editor
 {
-    private SerializedProperty rootPosition;
+    private SerializedProperty rootLinked;
+    private SerializedProperty endLinked;
     private SerializedProperty springConstant;
     private SerializedProperty restLength;
 
     void OnEnable()
     {
-        rootPosition = serializedObject.FindProperty("rootPosition");
+        rootLinked = serializedObject.FindProperty("rootLinkedIndex");
+        endLinked = serializedObject.FindProperty("endLinkedIndex");
         springConstant = serializedObject.FindProperty("springConstant");
         restLength = serializedObject.FindProperty("restLength");
     }
@@ -20,7 +22,8 @@ public class SpringEditor : Editor
         serializedObject.Update();
         
         EditorGUILayout.LabelField("Spring Properties", EditorStyles.boldLabel);
-        EditorGUILayout.PropertyField(rootPosition);
+        EditorGUILayout.PropertyField(rootLinked);
+        EditorGUILayout.PropertyField(endLinked);
         EditorGUILayout.PropertyField(springConstant);
         EditorGUILayout.PropertyField(restLength);
         
