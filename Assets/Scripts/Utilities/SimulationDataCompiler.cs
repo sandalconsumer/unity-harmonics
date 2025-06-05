@@ -8,6 +8,7 @@ public class SimulationEndData
     public List<float> stretches = new List<float>();
 }
 
+[RequireComponent(typeof(PhysicsController))]
 public class SimulationDataCompiler : MonoBehaviour // to be used as a singleton
 {
     public SimulationEndData simulationEndData = new SimulationEndData();
@@ -15,7 +16,7 @@ public class SimulationDataCompiler : MonoBehaviour // to be used as a singleton
     public float plotScale = 1f;
     public Vector3 plotOrigin = new Vector3(10, 0, 0);
     
-    void Update()
+    void FixedUpdate()
     {
         for (int i = 1; i < simulationEndData.timeStamps.Count; i++)
         {
@@ -24,4 +25,6 @@ public class SimulationDataCompiler : MonoBehaviour // to be used as a singleton
             Debug.DrawLine(p1, p2, Color.cyan);
         }
     }
+    
+    
 }
