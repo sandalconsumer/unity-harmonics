@@ -12,6 +12,8 @@ public class Spring
     public int rootLinkedIndex;
     public int endLinkedIndex;
 
+    public float dampingCoefficient;
+
     [HideInInspector]public Pointmass rootLinked;
     [HideInInspector]public Pointmass endLinked;
     
@@ -22,8 +24,8 @@ public class Spring
 public class Pointmass
 {
     public Vector3 position;
-    Vector3 acceleration;
-    Vector3 velocity;
+    [HideInInspector] public Vector3 acceleration;
+    [HideInInspector] public Vector3 velocity;
 
     public float mass = 100;
     [HideInInspector]public Vector3 leadForce;

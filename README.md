@@ -5,7 +5,6 @@ Harmonic Motion in Unity.
 - This project is still in its **very** early phase. I plan to make this project into a cloth engine to be used in games and for industrial purposes.
 
 ## Planned Features
-- Spring Damping
 - Higher-Order ODE Integrator (RK4) For more accurate Velocity, Position, and Acceleration calculations with more computation
 - Lower-Order ODE Integrator (Euler) for less computation but less accuracy
 - Collisions with geometric meshes
@@ -55,6 +54,7 @@ Every element in springs is an individual instance of class **Spring**:
 - Rest Length is the length of the spring `x` in Hooke's law `Fs = -kx` where if x = 0 there is no restorative force `Fs = 0`.
 - Root linked index is the pointmass that is linked to the spring from its root.
 - End linked index is the pointmass that is linked to the spring from its end.
+- Damping Coefficient determines the amount of damping on the spring. 0 means no damping (perfect oscillation).
 
 Note: If either of the "linked indices" do not exist, the spring is considered to come from the origin.
 

@@ -57,6 +57,13 @@ public class PhysicsController : MonoBehaviour
 
             spring.rootLinked.leadForce -= spring.restorativeForce;
             spring.endLinked.leadForce += spring.restorativeForce;
+
+            Vector3 relativeVelocity = spring.rootLinked.velocity - spring.endLinked.velocity;
+            float velocityOnSpringDirection = Vector3.Dot(relativeVelocity, springDirection);
+            Vector3 dampingForce = -spring.dampingCoefficient * velocityOnSpringDirection * springDirection;
+            
+            spring.rootLinked.leadForce += dampingForce;
+            spring.endLinked.leadForce -= dampingForce;
             
             if(visualizeSprings) {Debug.DrawLine(spring.rootLinked.position, spring.endLinked.position, Color.yellow);}
             if(recordData) {simulationEndData.stretches.Add(extension);}
