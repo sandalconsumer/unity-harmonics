@@ -2,7 +2,7 @@
 Harmonic Motion in Unity.
 
 ## Project Status
-- This project is still in its **very** early phase. I plan to make this project into a cloth engine to be used in games and for industrial purposes.
+- This project is still in its early phase. I plan to make this project into a cloth engine to be used in games and for industrial purposes.
 
 ## Planned Features
 - Higher-Order ODE Integrator (RK4) For more accurate Velocity, Position, and Acceleration calculations with more computation
