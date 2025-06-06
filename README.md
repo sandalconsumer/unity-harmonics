@@ -5,10 +5,12 @@ Harmonic Motion in Unity.
 - This project is still in its **very** early phase. I plan to make this project into a cloth engine to be used in games and for industrial purposes.
 
 ## Planned Features
-- Higher-Order ODE Integrator (RK4) For more accurate Velocity, Position, and Acceleration calculations  
-- Separation of Spring objects from Body objects for more freedom of usage and simpler construction of spring-mass based meshes and structures  
-- Self-Collisions and collisions with geometric meshes for spring-mass based meshes  
-- Switching to double-precision mathematics for more precise positions with little to no performance loss  
+- Spring Damping
+- Higher-Order ODE Integrator (RK4) For more accurate Velocity, Position, and Acceleration calculations with more computation
+- Lower-Order ODE Integrator (Euler) for less computation but less accuracy
+- Collisions with geometric meshes
+- Switching to double-precision mathematics for more precise positions with little to no performance loss
+- Automatic spring-mass mesh generation from 3D Meshes
 
 ## Setup
 
