@@ -27,7 +27,7 @@ public class Pointmass
     [HideInInspector] public Vector3 acceleration;
     [HideInInspector] public Vector3 velocity;
 
-    public float mass = 100;
+    public float mass = 0.05f;
     [HideInInspector]public Vector3 leadForce;
 
     public void VerletHalfstep(float deltaTime)
