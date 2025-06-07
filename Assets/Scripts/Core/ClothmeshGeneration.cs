@@ -1,19 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(PhysicsController))]
 public class ClothmeshGeneration : MonoBehaviour
 {
     public int detail = 10; //10 means the mesh will be a 10x10 square grid (200 triangles)
     public float meshSize = 0.1f;
     public float meshDamping = 0.5f;
     
-    private List<Spring> edges;
-    private List<Pointmass> vertices;
+    private List<Spring> edges = new List<Spring>();
+    private List<Pointmass> vertices = new List<Pointmass>();
     
     private PhysicsController physicsController;
 
-    void Start()
+    void Awake()
     {
         physicsController = GetComponent<PhysicsController>();
         
