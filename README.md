@@ -32,6 +32,7 @@ There are 3 main classes you need to know to understand this repo. And they are:
 1. Physics Controller
 2. Simulation Data Compiler
 3. Physics Objects
+4. Clothmesh Generation
 
 The **Physics Objects** script contains 2 classes: Spring and Pointmass.  
 Physics Controller makes a list of Springs and Pointmasses which are then linked by the user (similar to vertices and edges).  
@@ -61,6 +62,13 @@ Note: If either of the "linked indices" do not exist, the spring is considered t
 ### Simulation Data Compiler Variables
 - Plot Scale is a scalar that controls the size of the graph in the unity scene.
 - Plot origin is where the graph will start putting points down in the unity scene.
+
+### Clothmesh Generation Variables
+- Detail determines how many subdivisions the mesh will have.
+- Mesh size determines the size of 1 square face in the mesh. the default of 1 makes the mesh face area 1m<sup>2</sup>.
+- Mesh Damping determines the damping coefficient of the springs in the mesh.
+
+More Customization of individual masses and springs will come later.
 
 ## Notes / Technical Details
 - The ODE Integrator used for the point-masses in this simulation is currently Velocity Verlet. I might add RK4 as an option in the future.  
