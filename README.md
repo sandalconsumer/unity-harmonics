@@ -74,6 +74,7 @@ More Customization of individual masses and springs will come later.
 - The ODE Integrator used for the point-masses in this simulation is currently Velocity Verlet. I might add RK4 as an option in the future.  
 - I am planning for this project to be my graduation project, which means that I will most likely be working on it for the next 1.5 years (or until i have finished all my ambitions for it).  
 - Floating-point numbers are currently used for this simulation, but I am planning to switch to Double-Precision soon by bringing in **DVector3** from my other project **unity-n-body**.
+- It is recommended to change the Pointmasses / Springs lists in `void Awake()` as `void Start()` is used for linking springs and points, which can cause issues with execution order.
 
 ## Simulation Flow
 On Simulation Start:
