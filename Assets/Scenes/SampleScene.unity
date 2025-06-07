@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1678634227}
+  - component: {fileID: 1678634229}
   - component: {fileID: 1678634226}
   - component: {fileID: 1678634228}
   m_Layer: 0
@@ -228,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizeSprings: 1
-  recordData: 1
+  recordData: 0
   masses:
   - position: {x: 5, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -250,7 +251,7 @@ MonoBehaviour:
     restLength: 5
     rootLinkedIndex: 0
     endLinkedIndex: 1
-    dampingCoefficient: 0
+    dampingCoefficient: 0.1
     rootLinked:
       position: {x: 0, y: 0, z: 0}
       acceleration: {x: 0, y: 0, z: 0}
@@ -268,7 +269,7 @@ MonoBehaviour:
     restLength: 3.905125
     rootLinkedIndex: 1
     endLinkedIndex: 2
-    dampingCoefficient: 0
+    dampingCoefficient: 0.1
     rootLinked:
       position: {x: 0, y: 0, z: 0}
       acceleration: {x: 0, y: 0, z: 0}
@@ -283,10 +284,10 @@ MonoBehaviour:
       leadForce: {x: 0, y: 0, z: 0}
     restorativeForce: {x: 0, y: 0, z: 0}
   - springConstant: 1
-    restLength: 3.905125
+    restLength: 5
     rootLinkedIndex: 0
     endLinkedIndex: 2
-    dampingCoefficient: 0
+    dampingCoefficient: 0.1
     rootLinked:
       position: {x: 0, y: 0, z: 0}
       acceleration: {x: 0, y: 0, z: 0}
@@ -300,6 +301,21 @@ MonoBehaviour:
       mass: 0
       leadForce: {x: 0, y: 0, z: 0}
     restorativeForce: {x: 0, y: 0, z: 0}
+--- !u!114 &1678634229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678634225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e27b847016d0be4a9b8690e2cd23087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detail: 10
+  meshSize: 1
+  meshDamping: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
