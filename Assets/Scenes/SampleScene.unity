@@ -240,11 +240,52 @@ MonoBehaviour:
     velocity: {x: 0, y: 0, z: 0}
     mass: 1
     leadForce: {x: 0, y: 0, z: 0}
+  - position: {x: 7.5, y: 0, z: 3}
+    acceleration: {x: 0, y: 0, z: 0}
+    velocity: {x: 0, y: 0, z: 0}
+    mass: 1
+    leadForce: {x: 0, y: 0, z: 0}
   springs:
   - springConstant: 1
-    restLength: 6
+    restLength: 5
     rootLinkedIndex: 0
     endLinkedIndex: 1
+    dampingCoefficient: 0
+    rootLinked:
+      position: {x: 0, y: 0, z: 0}
+      acceleration: {x: 0, y: 0, z: 0}
+      velocity: {x: 0, y: 0, z: 0}
+      mass: 0
+      leadForce: {x: 0, y: 0, z: 0}
+    endLinked:
+      position: {x: 0, y: 0, z: 0}
+      acceleration: {x: 0, y: 0, z: 0}
+      velocity: {x: 0, y: 0, z: 0}
+      mass: 0
+      leadForce: {x: 0, y: 0, z: 0}
+    restorativeForce: {x: 0, y: 0, z: 0}
+  - springConstant: 1
+    restLength: 3.905125
+    rootLinkedIndex: 1
+    endLinkedIndex: 2
+    dampingCoefficient: 0
+    rootLinked:
+      position: {x: 0, y: 0, z: 0}
+      acceleration: {x: 0, y: 0, z: 0}
+      velocity: {x: 0, y: 0, z: 0}
+      mass: 0
+      leadForce: {x: 0, y: 0, z: 0}
+    endLinked:
+      position: {x: 0, y: 0, z: 0}
+      acceleration: {x: 0, y: 0, z: 0}
+      velocity: {x: 0, y: 0, z: 0}
+      mass: 0
+      leadForce: {x: 0, y: 0, z: 0}
+    restorativeForce: {x: 0, y: 0, z: 0}
+  - springConstant: 1
+    restLength: 3.905125
+    rootLinkedIndex: 0
+    endLinkedIndex: 2
     dampingCoefficient: 0
     rootLinked:
       position: {x: 0, y: 0, z: 0}
